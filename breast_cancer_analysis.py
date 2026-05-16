@@ -240,7 +240,7 @@ def main() -> None:
     )
 
     best_models = tune_models(build_models(), X_train, y_train)
-    cv_scores = cross_validate(best_models, X, y)
+    cv_scores = cross_validate(best_models, X_train, y_train)
     statistical_tests(cv_scores)
     evaluate_models(best_models, X_train, X_test, y_train, y_test)
     plot_confusion_matrices(best_models, X_test, y_test)
